@@ -1,4 +1,4 @@
-import { Table, Column, Model, HasMany } from 'sequelize-typescript';
+import { Table, Column, Model, HasMany, AllowNull } from 'sequelize-typescript';
 import { Product } from './product.entity';
 
 @Table({
@@ -12,6 +12,13 @@ export class Order extends Model {
     @Column
     price: string;
 
+    @Column
+    payment: boolean;
+
+    @Column
+    status: string;
+
+    @AllowNull
     @Column
     observation: string;
 
