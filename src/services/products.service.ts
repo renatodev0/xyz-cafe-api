@@ -13,7 +13,6 @@ export class ProductsService {
   }
 
   async createProduct(req, body, res) {
-    console.log(body)
     const { name, price, photo } = body
 
     const create_product = {
@@ -24,11 +23,9 @@ export class ProductsService {
 
     Product.create(create_product)
       .then(product => {
-        console.log(product)
         res.status(200).json({})
       })
       .catch(err => {
-        console.log(err)
         res.status(409).json({})
       })
 

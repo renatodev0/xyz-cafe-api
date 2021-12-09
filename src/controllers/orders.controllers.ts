@@ -16,4 +16,16 @@ export class OrdersControllers {
         await this.orderServices.createProduct(req, body, res);
     }
 
+    @Get('products')
+    async getProductsOfOrder(@Request() req, @Body() body, @Response() res) {
+        await this.orderServices.getProductsOfOrder(req, body, res);
+    }
+
+    
+    @Get('table')
+    async getOrdersForTable(@Request() req, @Body() body, @Response() res) {
+        await this.orderServices.getOrdersForTable(req, body, res);
+    }
+
+
 }
