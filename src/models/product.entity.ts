@@ -1,11 +1,13 @@
-import { Table, Column, Model, CreatedAt, UpdatedAt } from 'sequelize-typescript';
+import { Table, Column, Model, CreatedAt, UpdatedAt, DataType } from 'sequelize-typescript';
 
 @Table
 export class Product extends Model {
   @Column
   name: string;
 
-  @Column
+  @Column({
+    type: DataType.FLOAT
+  })
   price: number;
 
   @Column
